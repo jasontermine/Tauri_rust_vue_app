@@ -10,7 +10,7 @@ interface Repo {
 
 const repoList: Ref<Repo[]> = ref<Repo[]>([]);
 
-const username = ref("");
+const username: Ref<String> = ref("");
 
 async function fetchRepos(): Promise<void> {
   const repos: Repo[] = await invoke("get_repos", { username: username.value });
@@ -18,7 +18,7 @@ async function fetchRepos(): Promise<void> {
   repoList.value = repos;
 }
 
-function handleSubmit(event: Event) {
+function handleSubmit(event: Event): void {
   event.preventDefault();
   fetchRepos();
 }

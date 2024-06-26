@@ -1,7 +1,7 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use reqwest::Error;
+use reqwest::{Client, Error, Response};
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -12,15 +12,15 @@ struct Repository {
 }
 
 async fn fetch_user_repositories(username: &str) -> Result<Vec<Repository>, Error> {
-    let url = format!("https://api.github.com/users/{}/repos", username);
-    let client = reqwest::Client::new();
-    let response = client
+    let url: String = format!("https://api.github.com/users/{}/repos", username);
+    let client: Client = reqwest::Client::new();
+    let response: Response = client
         .get(&url)
         .header("User-Agent", "request")
         .send()
         .await?;
 
-    let repos = response.json::<Vec<Repository>>().await?;
+    let repos: Vec<Repository> = response.json::<Vec<Repository>>().await?;
     Ok(repos)
 }
 
