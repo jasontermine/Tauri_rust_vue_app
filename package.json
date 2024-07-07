@@ -12,7 +12,7 @@
   "dependencies": {
     "@tauri-apps/api": "^1",
     "vue": "^3.3.4",
-    "mdb-vue-ui-kit": "./mdb/mdb-vue-ui-kit-3.1.0.tgz"
+    "vuetify": "^3.6.11"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1",
