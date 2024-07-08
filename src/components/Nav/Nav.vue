@@ -1,6 +1,10 @@
 <template>
   <VLayout>
-    <VNavigationDrawer expand-on-hover rail>
+    <VNavigationDrawer
+      style="background-color: #323243; color: whitesmoke"
+      expand-on-hover
+      rail
+    >
       <VList>
         <VListItem
           prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
@@ -13,19 +17,14 @@
 
       <VList density="compact" nav>
         <VListItem
-          prepend-icon="mdi-folder"
-          title="My Files"
-          value="myfiles"
+          prepend-icon="mdi-github"
+          title="Overview"
+          value="overview"
         ></VListItem>
         <VListItem
-          prepend-icon="mdi-account-multiple"
-          title="Shared with me"
-          value="shared"
-        ></VListItem>
-        <VListItem
-          prepend-icon="mdi-star"
-          title="Starred"
-          value="starred"
+          prepend-icon="mdi-cog"
+          title="Settings"
+          value="settings"
         ></VListItem>
       </VList>
     </VNavigationDrawer>
@@ -34,4 +33,6 @@
   </VLayout>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SvgIcon from '@jamescoyle/vue-icon';
+</script>
