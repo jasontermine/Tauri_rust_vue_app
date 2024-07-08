@@ -37,8 +37,7 @@ import FetchRepos from "@/components/FetchRepos/FetchRepos.vue";
   justify-content: center;
   align-items: center;
   height: 30rem;
-  margin-top: 5rem;
-  margin-bottom: 15rem;
+  margin-bottom: 10rem;
 }
 
 </style>
