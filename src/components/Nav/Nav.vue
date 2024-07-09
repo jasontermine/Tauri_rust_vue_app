@@ -20,11 +20,13 @@
           prepend-icon="mdi-github"
           title="Overview"
           value="overview"
+          to="/"
         ></VListItem>
         <VListItem
           prepend-icon="mdi-cog"
           title="Settings"
           value="settings"
+          to="/settings"
         ></VListItem>
       </VList>
     </VNavigationDrawer>
@@ -34,5 +36,4 @@
 </template>
 
 <script setup lang="ts">
-import SvgIcon from '@jamescoyle/vue-icon';
 </script>
