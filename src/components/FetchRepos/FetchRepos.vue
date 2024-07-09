@@ -12,11 +12,13 @@
             <th>Name</th>
             <th>URL</th>
             <th>Description</th>
+            <th>Actions</th>
           </tr>
           <tr v-for="repo in repoList" :key="repo.name">
             <td>{{ repo.name }}</td>
             <td><a style="color: lightblue;" :href="repo.html_url">{{ repo.html_url }}</a></td>
             <td>{{ repo.description }}</td>
+            <td><VBtn @click="cloneRepo(repo.html_url)" variant="tonal">Clone</VBtn></td>
           </tr>
         </table>
       </div>
@@ -30,6 +32,15 @@ import {
   username, 
   handleSubmit 
 } from '@/components/FetchRepos/script';
+import { invoke } from "@tauri-apps/api/tauri";
+
+async function cloneRepo(repoUrl: string) {
+  try {
+    await invoke("clone_repo", { repoUrl });
+  } catch (error) {
+    alert(`Failed to clone repo: ${error}`);
+  }
+}
 </script>
 
 <style scoped lang="css">
