@@ -1,14 +1,11 @@
-
 <template>
-  <div class="container">
-    <FetchRepos />
-  </div>
-  <Nav />
+  <RouterView />
+  <Nav style="position: absolute;" /> 
 </template>
 
 <script setup lang="ts">
 import Nav from "@/components/Nav/Nav.vue";
-import FetchRepos from "@/components/FetchRepos/FetchRepos.vue";
+import { RouterView } from "vue-router";
 </script>
 
 <style scoped>
@@ -31,13 +28,4 @@ import FetchRepos from "@/components/FetchRepos/FetchRepos.vue";
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30rem;
-  margin-bottom: 10rem;
-}
-
 </style>
